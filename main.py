@@ -11,64 +11,131 @@ class main(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()  
         self.ui.setupUi(self)
+        
         self.player = QMediaPlayer(self)
-        self.ui.pushButton_play1.clicked.connect(self.play)
+        self.isPaused = False
+        self.ui.horizontalSlider.valueChanged.connect(self.controlar_volume)
         self.ui.pushButton_parar1.clicked.connect(self.parar)
-        self.ui.pushButton_play2.clicked.connect(self.play2)
-        self.ui.pushButton_parar2.clicked.connect(self.parar)
-        self.ui.pushButton_play3.clicked.connect(self.play3)
-        self.ui.pushButton_parar3.clicked.connect(self.parar)
+        self.ui.pushButton_pausar.clicked.connect(self.pausar)
 
+        self.ui.pushButton_play1.clicked.connect(self.play)
+        self.ui.pushButton_play1_2.clicked.connect(self.play2)
+        self.ui.pushButton_play1_4.clicked.connect(self.play3)
+        self.ui.pushButton_play1_5.clicked.connect(self.play4)
+        self.ui.pushButton_play1_6.clicked.connect(self.play5)
+
+
+    def parar(self):
+        self.player.stop()
+        self.isPaused = False
+        print("A musica parou!")
+
+    def pausar(self):
+        self.player.pause()
+        self.isPaused = True
+        print("A musica pausou!")
+
+    def controlar_volume(self):
+        volume = self.ui.horizontalSlider_volume.value()
+        self.player.setVolume(volume)
+        print(f"Volume ajustado para: {volume}")
+    
 
     def play (self):
-        caminho_musica = os.path.abspath("musicas/Aqui No Mar Yuri Chesman, Cast - The Little Mermaid - (De A Pequena Sereia).mp3")
-        print("local da musica:", caminho_musica)
-        
-
-        url = QUrl.fromLocalFile(caminho_musica)
-
-        if url.isValid():
-            self.player.setMedia(QMediaContent(url))
+        caminho_music = os.path.abspath("")
+        print("Local da música: ",caminho_music)
+        if self.isPaused:
             self.player.play()
-            print("Tocando música...")
-        else:
-            print("Erro: Caminho do arquivo inválido.")
+            self.isPaused = False
 
+        else:
+
+            url = QUrl.fromLocalFile(caminho_music)
+            
+            if url.isValid():
+                self.player.setMedia(QMediaContent(url))
+                self.player.play()
+                print("Tocando música...")
+
+            else:
+                print("Erro: Caminho do arquivo inválido.")
     
     def play2 (self):
-        caminho_musica = os.path.abspath("musicas/Faroeste Caboclo.mp3")
-        print("local da musica:", caminho_musica)
-        
-
-        url = QUrl.fromLocalFile(caminho_musica)
-
-        if url.isValid():
-            self.player.setMedia(QMediaContent(url))
+        caminho_music = os.path.abspath("Epic.mp3")
+        print("Local da música: ",caminho_music)
+        if self.isPaused:
             self.player.play()
-            print("Tocando música...")
+            self.isPaused = False
+
         else:
-            print("Erro: Caminho do arquivo inválido.")
-
-    def play3 (self):
-            caminho_musica = os.path.abspath("musicas/Good luck babe.mp3")
-            print("local da musica:", caminho_musica)
-            
-
-            url = QUrl.fromLocalFile(caminho_musica)
+        
+            url = QUrl.fromLocalFile(caminho_music)
 
             if url.isValid():
                 self.player.setMedia(QMediaContent(url))
                 self.player.play()
                 print("Tocando música...")
+
             else:
                 print("Erro: Caminho do arquivo inválido.")
-    def parar (self):
-        self.player.stop()
-        print("A musica parou!")
 
-        
+    def play3 (self):
+        caminho_music = os.path.abspath("Djonga.mp3")
+        print("Local da música: ",caminho_music)
+        if self.isPaused:
+            self.player.play()
+            self.isPaused = False
 
+        else:
+
+            url = QUrl.fromLocalFile(caminho_music)
+
+            if url.isValid():
+                self.player.setMedia(QMediaContent(url))
+                self.player.play()
+                print("Tocando música...")
+
+            else:
+                print("Erro: Caminho do arquivo inválido.")
+
+    def play4 (self):
+        caminho_music = os.path.abspath("Quemnaoquersoueu.mp3")
+        print("Local da música: ",caminho_music)
+        if self.isPaused:
+            self.player.play()
+            self.isPaused = False
+
+        else:
+
+            url = QUrl.fromLocalFile(caminho_music)
+
+            if url.isValid():
+                self.player.setMedia(QMediaContent(url))
+                self.player.play()
+                print("Tocando música...")
+
+            else:
+                print("Erro: Caminho do arquivo inválido.")
     
+    def play5 (self):
+        caminho_music = os.path.abspath("Tetodevidro.mp3")
+        print("Local da música: ",caminho_music)
+        if self.isPaused:
+            self.player.play()
+            self.isPaused = False
+
+        else:
+
+            url = QUrl.fromLocalFile(caminho_music)
+
+            if url.isValid():
+                self.player.setMedia(QMediaContent(url))
+                self.player.play()
+                print("Tocando música...")
+
+            else:
+                print("Erro: Caminho do arquivo inválido.")
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
