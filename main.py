@@ -42,7 +42,7 @@ class main(QMainWindow):
     
 
     def play (self):
-        caminho_music = os.path.abspath("Aqui No Mar Yuri Chesman, Cast - The Little Mermaid - (De A Pequena Sereia).mp3")
+        caminho_music = os.path.abspath("Musicas/akinomar.mp3")
         print("Local da música: ",caminho_music)
         if self.isPaused:
             self.player.play()
@@ -61,7 +61,7 @@ class main(QMainWindow):
                 print("Erro: Caminho do arquivo inválido.")
     
     def play2 (self):
-        caminho_music = os.path.abspath("Faroeste Caboclo.mp3")
+        caminho_music = os.path.abspath("Musicas/FCaboclo.mp3")
         print("Local da música: ",caminho_music)
         if self.isPaused:
             self.player.play()
@@ -80,7 +80,7 @@ class main(QMainWindow):
                 print("Erro: Caminho do arquivo inválido.")
 
     def play3 (self):
-        caminho_music = os.path.abspath("Wandinha tocando violoncelo.mp3")
+        caminho_music = os.path.abspath("Musicas/Wandinha.mp3")
         print("Local da música: ",caminho_music)
         if self.isPaused:
             self.player.play()
@@ -99,7 +99,7 @@ class main(QMainWindow):
                 print("Erro: Caminho do arquivo inválido.")
 
     def play4 (self):
-        caminho_music = os.path.abspath("FROZEN  Let It Go Sing-along  Official Disney UK.mp3")
+        caminho_music = os.path.abspath("Musicas/Frozen.mp3")
         print("Local da música: ",caminho_music)
         if self.isPaused:
             self.player.play()
@@ -118,7 +118,7 @@ class main(QMainWindow):
                 print("Erro: Caminho do arquivo inválido.")
     
     def play5 (self):
-        caminho_music = os.path.abspath("Good luck babe.mp3")
+        caminho_music = os.path.abspath("Musicas/GLbabe.mp3")
         print("Local da música: ",caminho_music)
         if self.isPaused:
             self.player.play()
