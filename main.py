@@ -36,13 +36,13 @@ class main(QMainWindow):
         print("A musica pausou!")
 
     def controlar_volume(self):
-        volume = self.ui.horizontalSlider_volume.value()
+        volume = self.ui.horizontalSlider.value()
         self.player.setVolume(volume)
         print(f"Volume ajustado para: {volume}")
     
 
     def play (self):
-        caminho_music = os.path.abspath("")
+        caminho_music = os.path.abspath("Aqui No Mar Yuri Chesman, Cast - The Little Mermaid - (De A Pequena Sereia).mp3")
         print("Local da música: ",caminho_music)
         if self.isPaused:
             self.player.play()
@@ -61,7 +61,7 @@ class main(QMainWindow):
                 print("Erro: Caminho do arquivo inválido.")
     
     def play2 (self):
-        caminho_music = os.path.abspath("Epic.mp3")
+        caminho_music = os.path.abspath("Faroeste Caboclo.mp3")
         print("Local da música: ",caminho_music)
         if self.isPaused:
             self.player.play()
@@ -80,7 +80,7 @@ class main(QMainWindow):
                 print("Erro: Caminho do arquivo inválido.")
 
     def play3 (self):
-        caminho_music = os.path.abspath("Djonga.mp3")
+        caminho_music = os.path.abspath("Wandinha tocando violoncelo.mp3")
         print("Local da música: ",caminho_music)
         if self.isPaused:
             self.player.play()
@@ -99,7 +99,7 @@ class main(QMainWindow):
                 print("Erro: Caminho do arquivo inválido.")
 
     def play4 (self):
-        caminho_music = os.path.abspath("Quemnaoquersoueu.mp3")
+        caminho_music = os.path.abspath("FROZEN  Let It Go Sing-along  Official Disney UK.mp3")
         print("Local da música: ",caminho_music)
         if self.isPaused:
             self.player.play()
@@ -118,7 +118,7 @@ class main(QMainWindow):
                 print("Erro: Caminho do arquivo inválido.")
     
     def play5 (self):
-        caminho_music = os.path.abspath("Tetodevidro.mp3")
+        caminho_music = os.path.abspath("Good luck babe.mp3")
         print("Local da música: ",caminho_music)
         if self.isPaused:
             self.player.play()
